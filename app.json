@@ -1,4 +1,43 @@
 {
-  "name": "DocScannerApp",
-  "displayName": "DocScannerApp"
+  "expo": {
+    "name": "DocScannerApp",
+    "slug": "DocScannerApp",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#6366F1"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.docscanner.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to scan documents.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select document images."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#6366F1"
+      },
+      "package": "com.docscanner.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES"
+      ]
+    },
+    "plugins": [
+      "expo-document-picker",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app needs access to your photos to scan documents.",
+          "cameraPermission": "The app needs access to your camera to scan documents."
+        }
+      ]
+    ]
+  }
 }
